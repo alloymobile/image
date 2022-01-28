@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.config;
+package com.alloymobile.image.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

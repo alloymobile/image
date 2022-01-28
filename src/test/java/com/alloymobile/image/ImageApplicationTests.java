@@ -1,4 +1,4 @@
-package com.alloymobiletech.image;
+package com.alloymobile.image;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

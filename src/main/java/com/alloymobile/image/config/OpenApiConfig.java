@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.config;
+package com.alloymobile.image.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;

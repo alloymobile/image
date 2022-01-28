@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.model;
+package com.alloymobile.image.model;
 
 import lombok.Data;
 

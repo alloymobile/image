@@ -1,7 +1,8 @@
-package com.alloymobiletech.image.resource;
+package com.alloymobile.image.resource;
 
-import com.alloymobiletech.image.model.Image;
-import com.alloymobiletech.image.service.ImageService;
+import com.alloymobile.image.config.SecurityConstants;
+import com.alloymobile.image.service.ImageService;
+import com.alloymobile.image.model.Image;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.net.URI;
-
-import static com.alloymobiletech.image.config.SecurityConstants.IMAGE_WIDTH;
 
 @RestController
 @Tag(name = "Test APIs", description = "Test APIs for demo purpose")
@@ -49,7 +48,7 @@ public class ImageResource {
     )
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Image> uploadThumbnail(@RequestPart(value = "file") MultipartFile file) throws Exception {
-        URI imageName = this.imageService.simpleResizeImage(file,IMAGE_WIDTH);
+        URI imageName = this.imageService.simpleResizeImage(file, SecurityConstants.IMAGE_WIDTH);
         Image image = new Image();
         image.setImageUrl(imageName.toString());
         return ResponseEntity.ok(image);

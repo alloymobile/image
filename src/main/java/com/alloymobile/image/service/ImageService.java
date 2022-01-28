@@ -1,7 +1,7 @@
-package com.alloymobiletech.image.service;
+package com.alloymobile.image.service;
 
-import com.alloymobiletech.image.integration.AzureBlobService;
-import com.alloymobiletech.image.utils.MultipartFileConvertor;
+import com.alloymobile.image.integration.AzureBlobService;
+import com.alloymobile.image.utils.MultipartFileConvertor;
 import org.imgscalr.Scalr;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

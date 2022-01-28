@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.config;
+package com.alloymobile.image.config;
 
 public class SecurityConstants {
     public static final String SECRET = "ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength";

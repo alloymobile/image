@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.security;
+package com.alloymobile.image.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.alloymobiletech.image.config.SecurityConstants.*;
+import static com.alloymobile.image.config.SecurityConstants.*;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 

@@ -1,4 +1,4 @@
-package com.alloymobiletech.image.integration;
+package com.alloymobile.image.integration;
 
 import com.microsoft.azure.storage.OperationContext;
 import com.microsoft.azure.storage.StorageException;
