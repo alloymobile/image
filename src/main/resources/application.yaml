@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: "prod"
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+azure:
+  subscriptionId: 611f6415-4438-4fc6-b289-e4fe3a7c541f
+  storage:
+    ConnectionString: DefaultEndpointsProtocol=https;AccountName=alloyfirmstorage;AccountKey=fSt6YgA8rXKktFYtnyp7/+wUvpuMCI2Z46SXNqC5z4fi8J5FNRO5howkmtJrPwUjMJHQ3mM4rNTERPuA3CEZRg==;EndpointSuffix=core.windows.net
+    container:
+      name: alloymobile
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+springbootwebfluxjjwt:
+  jjwt:
+    secret: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
+    expiration: 28800
