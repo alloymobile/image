@@ -1,4 +1,4 @@
-package com.alloymobile.image.config;
+package com.alloymobile.image.application.config;
 
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.StorageException;

@@ -110,6 +110,7 @@
                 <version>1.12.0</version>
                 <configuration>
                     <schemaVersion>v2</schemaVersion>
+                    <authType>azure_cli</authType>
                     <subscriptionId>${azure.subscriptionId}</subscriptionId>
                     <resourceGroup>alloymobile-rg</resourceGroup>
                     <appName>alloymobile-image-app</appName>

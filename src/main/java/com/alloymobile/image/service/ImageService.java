@@ -1,7 +1,7 @@
 package com.alloymobile.image.service;
 
 import com.alloymobile.image.integration.AzureBlobService;
-import com.alloymobile.image.utils.MultipartFileConvertor;
+import com.alloymobile.image.application.utils.MultipartFileConvertor;
 import org.imgscalr.Scalr;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,13 +22,13 @@ public class ImageService {
         this.azureBlobService = azureBlobService;
     }
 
-    public URI upload(MultipartFile multipartFile){
-        return this.azureBlobService.upload(multipartFile);
+    public URI upload(MultipartFile multipartFile, String containerName){
+        return this.azureBlobService.upload(multipartFile,containerName);
     }
 
 
 
-    public URI simpleResizeImage(MultipartFile file, int targetWidth) throws Exception {
+    public URI simpleResizeImage(MultipartFile file, int targetWidth, String containerName) throws Exception {
         String[] parts = file.getContentType().split("/");
         String contentType="application/jpg";
         byte[] bytes = file.getBytes();
@@ -50,6 +50,6 @@ public class ImageService {
                 , file.getOriginalFilename()
                 , file.getName()
                 , contentType);
-        return upload(fileConvertor);
+        return upload(fileConvertor,containerName);
     }
 }

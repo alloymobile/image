@@ -1,4 +1,4 @@
-package com.alloymobile.image.utils;
+package com.alloymobile.image.application.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 

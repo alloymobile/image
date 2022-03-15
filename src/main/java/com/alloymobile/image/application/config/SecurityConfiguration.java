@@ -1,6 +1,6 @@
-package com.alloymobile.image.config;
+package com.alloymobile.image.application.config;
 
-import com.alloymobile.image.security.AuthorizationFilter;
+import com.alloymobile.image.application.security.AuthorizationFilter;
 import com.google.common.collect.ImmutableList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -62,11 +62,12 @@ public class AzureBlobService {
         return uris;
     }
 
-    public URI upload(MultipartFile multipartFile){
+    public URI upload(MultipartFile multipartFile, String containerName){
         URI uri = null;
         CloudBlockBlob blob = null;
         try {
-            blob = cloudBlobContainer.getBlockBlobReference(multipartFile.getOriginalFilename());
+            CloudBlobContainer container = cloudBlobClient.getContainerReference(containerName);
+            blob = container.getBlockBlobReference(multipartFile.getOriginalFilename());
             blob.getProperties().setContentType("image/jpg");
             blob.upload(multipartFile.getInputStream(), -1);
             uri = blob.getUri();
