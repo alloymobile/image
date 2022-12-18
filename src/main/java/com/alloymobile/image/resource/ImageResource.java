@@ -3,13 +3,23 @@ package com.alloymobile.image.resource;
 import com.alloymobile.image.application.config.SecurityConstants;
 import com.alloymobile.image.service.ImageService;
 import com.alloymobile.image.model.Image;
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.net.URI;
 
 @RestController
@@ -50,4 +60,6 @@ public class ImageResource {
         image.setImageUrl(imageName.toString());
         return ResponseEntity.ok(image);
     }
+
 }
+

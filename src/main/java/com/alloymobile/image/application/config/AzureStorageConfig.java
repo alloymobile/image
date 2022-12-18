@@ -1,5 +1,6 @@
 package com.alloymobile.image.application.config;
 
+import com.azure.storage.blob.BlobClientBuilder;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
@@ -15,21 +16,24 @@ import java.util.Objects;
 @Configuration
 public class AzureStorageConfig {
 
-    private final Environment environment;
+    private final String connectionString;
 
-    public AzureStorageConfig(Environment environment) {
-        this.environment = environment;
+    private final String containerName;
+
+    public AzureStorageConfig(ImageConfiguration configuration) {
+        this.connectionString = configuration.getAzureStorageConnectionString();
+        this.containerName = configuration.getAzureStorageContainerName();
     }
 
     @Bean
     public CloudBlobClient cloudBlobClient() throws URISyntaxException, StorageException, InvalidKeyException {
-        CloudStorageAccount storageAccount = CloudStorageAccount.parse(Objects.requireNonNull(environment.getProperty("azure.storage.ConnectionString")));
+        CloudStorageAccount storageAccount = CloudStorageAccount.parse(connectionString);
         return storageAccount.createCloudBlobClient();
     }
 
     @Bean
     public CloudBlobContainer testBlobContainer() throws URISyntaxException, StorageException, InvalidKeyException {
-        return cloudBlobClient().getContainerReference(Objects.requireNonNull(environment.getProperty("azure.storage.container.name")));
+        return cloudBlobClient().getContainerReference("cpagarg");
     }
 
 }
